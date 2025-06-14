@@ -4,8 +4,8 @@
 #include "heap.hpp"
 
 void benchmark_heaps(std::mt19937 gen) {
-    std::array<size_t, 6> sizes = {10000, 100000, 500000, 1000000, 2000000, 10000000};
-    int num_trials = 20; // Reduced for quicker testing across multiple sizes, adjust as needed
+    std::array<size_t, 6> sizes = {10000, 100000, 1000000, 10000000, 100000000, 1000000000};
+    int num_trials = 5; // Reduced for quicker testing across multiple sizes, adjust as needed
 
     std::cout << std::left << std::setw(12) << "Size"
               << std::setw(25) << "Avg Heapify (s)"
@@ -65,6 +65,5 @@ int main() {
     std::random_device rd;
     std::mt19937 gen(rd());
 
-    benchmark_heaps(gen);
-    
+    benchmark_heaps(gen);   
 }
