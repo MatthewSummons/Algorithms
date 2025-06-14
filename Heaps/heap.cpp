@@ -51,3 +51,13 @@ void heapify_sift_up(std::vector<int> &vec) {
         sift_up(vec, it);
     }
 }
+
+std::vector<int> meld_heap(const std::vector<int> &h1, const std::vector<int> &h2) {
+    std::vector<int> res;
+    res.reserve(h1.size() + h2.size());
+    res.insert(res.end(), h1.begin(), h1.end());
+    res.insert(res.end(), h2.begin(), h2.end());
+
+    heapify(res);
+    return res;
+}
